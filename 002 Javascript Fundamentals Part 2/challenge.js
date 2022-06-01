@@ -77,3 +77,37 @@ console.log(checkWinner(scoreDolphins,scoreKoalas));
 
 // Coding Challenge 2
 
+/* Tip 15% of 
+the bill if the bill value is between 50 and 300, and if the value is different, the tip is 
+20%.*/
+// Write a function 'calcTip' that takes any bill value as an 
+// input and returns the corresponding tip
+const calcTip = (bill) => bill >= 50 && bill <= 300 ? `${Number(bill * 0.15)}` : `${Number(bill * 0.2)}`;
+
+const bills = [
+    125,
+    555,
+    44
+]
+
+const tips = [
+    calcTip(bills[0]),
+    calcTip(bills[1]),
+    calcTip(bills.length - 1)
+]
+
+console.log(tips);
+
+const billTip = [
+    Number(tips[0]) + bills[0],
+    Number(tips[1]) + bills[1],
+    Number(tips[2]) + bills[2]
+]
+console.log(billTip);
+// Doesn't work, tips is coerced into being a string.
+const totals = [
+    bills[0] + tips[0],
+    bills[1] + tips[1],
+    bills[2] + tips[2]
+]
+console.log(totals);
