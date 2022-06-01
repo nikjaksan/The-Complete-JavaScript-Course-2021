@@ -78,4 +78,32 @@ const populationAsPercentage = [percentageOfWorld(populations[0]), percentageOfW
 
 console.log(populationAsPercentage);
 
+
+
+// 040 Basic Array Operations (Methods)
+// create array
+const neighbours = [
+    'Namibia',
+    'Botswana',
+    'Zimbabwe',
+    'Mozambique'
+]
+console.log(neighbours);
+//add element to end
+neighbours.push('Utopia'); 
+console.log(neighbours);
+// remove end element
+neighbours.pop();
+console.log(neighbours);
+// if/else using array method includes
+if (neighbours.includes('Germany')) {
+    console.log("Likely a Central European country.")
+} else {
+    console.log("Likely not a Central European country.")
+}
+
+// find and use index to replace element
+console.log(neighbours);
+neighbours[neighbours.indexOf('Mozambique')] = 'Republic of Mozambique';
+console.log(neighbours);
 */
