@@ -296,6 +296,61 @@ const age2 = calcAge(birthYearArray[1]);
 const age3 = calcAge(birthYearArray[birthYearArray.length - 1]);
 
 console.log(age1, age2, age3);
-*/
+
 
 // 040 Basic Array Operations (Methods)
+// Methods are like functions applied to Arrays. They are essentially Array Operations
+
+// push method - adds element to end of array
+const array1 = ['a','b','c'];
+array1.push('d');
+array1.push('e');
+console.log(array1);
+// the .push('element') returns the new length of the array.
+
+
+// unshift method - adds element to beginning of array
+array1.unshift('0'); //adds '0' to beginning
+console.log(array1);
+// .unshift('element') returns the array length
+
+// pop method - removes the last element of the array
+// arrayName.pop() >> no argument required to remove the last element
+array1.pop();
+console.log(array1);
+// .pop returns the removed element
+console.log(array1.pop()); //removed element
+console.log(array1);
+
+// .shift() method to remove the first element
+// no argument required
+array1.shift();
+console.log(array1);
+console.log(array1.shift()); //returns the removed element
+
+console.log(array1);
+// .indexOf returns the position of an element
+console.log(array1.indexOf('c'));
+console.log(array1.indexOf('b'));
+// if indexOf can't find an element, it will return -1
+
+// .includes('element') checks if element exists in array. If it does, returns TRUE. If it does NOT, it returns FALSE.
+console.log(array1.includes('Nick')); //false since 'Nick' does not exist in the array.
+console.log(array1.includes('b')); //true
+// .includes() tests for STRICT EQUALITY
+array1.unshift(('0')); //string '0'
+console.log(array1); //array with '0'
+console.log(array1.includes((0))) // number 0 >> FALSE since '0' is not === 0 (no type coercion)
+// Using .includes() in an IF/ELSE statement
+if (array1.includes('x')) {
+    console.log('The array includes x')
+} else {
+    console.log("The array doesn't include x")
+}
+if (array1.includes('c')) {
+    console.log('The array includes c')
+} else {
+    console.log("The array doesn't include c")
+}
+*/
+// 041 Coding Challenge 2

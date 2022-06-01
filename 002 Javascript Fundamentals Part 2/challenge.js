@@ -75,4 +75,5 @@ console.log(checkWinner(scoreDolphins,scoreKoalas));
 
 */
 
+// Coding Challenge 2
 
