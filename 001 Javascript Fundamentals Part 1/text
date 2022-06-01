@@ -1,0 +1,65 @@
+010 VARIABLES
+variable names can only contain: 
+numbers (but not starting with numbers), letters, underscores or $.
+They cannot have names like "new", "function" since these words are 
+integral to language syntax.
+In order to bypass this, simply start with a permitted character 
+like "_" or "$"
+Make use of camelCase for names requiring >1 names
+Variables in ALLCAPS are reserved for constants (like PI for 3.141..)
+Use descriptive names (myFirstJob vs. job1; mySecondJob vs job2 etc.)
+
+012 Data Types
+Values are either objects or primitive (everything that isn't an object)
+Numbers are a floating point, used for decimal/integer values
+Strings are for text or a sequence of characters
+Boolean are a true/false logical type used for taking decisions.
+Undefined are values for a variable that has not been defined. eg let children=""
+Null is used under similar circumstances as undefined.
+Javascript is a dynamic language. This means that we do not have to define datatypes as they are automatically defined. We can easily change the datatype of a value (Boolean >> String etc.)
+The "value" has a data type, not the variable.
+JS programs are executed from top to bottom. 
+To redefine a variable, do not use "let" again: let javascriptIsFun=true  >> javascriptIsFun="3.14"   (We changed the datatype of the value from Boolean to a Number)
+Declaring an empty variable like 'let year;' is an undefined variable. 
+
+013 let, const and var
+Using let allows us to change or mutate the value of a variable at a later stage as well as use the undefined datatype.
+Best practice dictates preferable use of const unless you know a variable will change. This is to minimise future possible bugs.
+
+014 Basic Operators
+Operators enable us to perform different manipulations of values (Maths, Comparison, Logic, Assignment etc.)
+Certain operators have higher precedence than others. Example :  let population = 10 + 5; (+ operator takes precedence over the = operator)
+Example 2: let populationMore = 50 - now > 25 - now (The subtraction operation is performed before the boolean comparison).
+
+015 Operator Precedence
+Javascript has a well defined precedence list found on MDN
+
+017 Strings and Template Literals
+
+Template literals enable a much easier form of creating strings/concatenated variables by allowing us to utilise normal sentence structure and insert variables without much struggle.
+
+// 018 Making Decisions (if/else statements)
+Basic If/Else control structure:
+if(is this true?) {
+ then execute this block of code
+} else {
+ if it's not true, then execute this block
+}
+    'else' is not mandatory, if no condition is made JS will simply move on to the next code.
+
+** Using .toFixed(decimalplaces) to limit a number to a certain length of decimals.
+const PI = 3.14159
+const piRounded = PI.toFixed(2) //for 2 decimal places
+print piRounded = 3.14
+
+.toFixed is a method that converts the rounded number to a string
+
+020 Type Conversion and Coercion
+
+Type Conversion is manually converting from one datatype to another using a function.
+-We can convert a number to a string, or a string to a number or to a boolean. 
+-Three types of data we can move between: numbers, strings and boolean operations.
+-If we have the string '42' and want it to be a number, we use the Number('42') function
+-If we want a number to be a string, use String(42)
+
+Type Coercion occurs when doing an operation involving two different data types. In the background Javascript will convert one of the value to the same as the other.
