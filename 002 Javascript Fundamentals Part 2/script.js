@@ -352,5 +352,71 @@ if (array1.includes('c')) {
 } else {
     console.log("The array doesn't include c")
 }
-*/
+
 // 041 Coding Challenge 2
+
+// 042 Introduction to Objects
+const yearNow = new Date().getFullYear();
+const birthYear = 1996;
+// Array example
+const nickArray = [
+    'Nick',
+    'Santiago',
+    yearNow - birthYear,
+    'Unemployed',
+    ['Sasha', 'Nico', 'Marek']
+]
+// In arrays, order is very important(index)
+
+// Object example
+const nickObject = {
+    name: "Nick",
+    surname: "Santiago",
+    age: yearNow - birthYear,
+    status: 'unemployed',
+    friends: ["Sasha", "Nico", "Marek"]
+}
+console.log(nickObject)
+console.log(nickObject.name)
+//object.propertyName >> value of property
+//calling the object to produce value of property 'name'
+// In Objects, the order does not matter. The object properties (keys) are used intead of the index system.
+
+*/
+// 043 Dot vs. Bracket Notation
+// Calling an object property (Dot method)
+// objectName.propertyName
+const nickObject = {
+    firstName: 'Nick',
+    lastName: 'Santiago',
+    age: 26,
+    status: 'unemployed',
+    friends: ['Sasha', 'Nico', 'Marek']
+}
+console.log(nickObject.firstName);
+// Dot notation requires us to use the full property name.
+
+
+//property name must be in quotes when using the bracket notation
+// objectName['propertyName'];
+console.log(nickObject['lastName'])
+
+
+// create common propertyName variable so we can call properties by combining the variable with the unique propertyKey
+const nameKey = 'Name';
+console.log(nickObject["first" + nameKey]); //obj name['unique key' + propertyName variable]
+console.log(nickObject["last" + nameKey]);
+// Only use bracket notation when we need to compute the object propertyName. Otherwise - just stick to the dot notation. (simpler)
+
+const interestedIn = prompt(`What do you want to know about Nick? Choose between firstName, lastName, age, status or friends.`)
+console.log(nickObject.interestedIn);
+// undefined since nickObject does not have a propery called 'interestedIn'
+console.log(nickObject[interestedIn]);
+//using bracket notation allows for interestedIn to be calculated (input from the prompt)
+
+
+
+
+
+
+

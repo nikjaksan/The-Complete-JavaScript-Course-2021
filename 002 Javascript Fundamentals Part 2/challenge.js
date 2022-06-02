@@ -73,13 +73,13 @@ Each team competes 3 times, and then the average of the 3 scores is calculated (
 
 console.log(checkWinner(scoreDolphins,scoreKoalas));
 
-*/
+
 
 // Coding Challenge 2
 
-/* Tip 15% of 
+Tip 15% of 
 the bill if the bill value is between 50 and 300, and if the value is different, the tip is 
-20%.*/
+20%.
 // Write a function 'calcTip' that takes any bill value as an 
 // input and returns the corresponding tip
 const calcTip = (bill) => bill >= 50 && bill <= 300 ? `${Number(bill * 0.15)}` : `${Number(bill * 0.2)}`;
@@ -111,3 +111,5 @@ const totals = [
     bills[2] + tips[2]
 ]
 console.log(totals);
+
+*/

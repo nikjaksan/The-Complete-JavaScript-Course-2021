@@ -106,4 +106,18 @@ if (neighbours.includes('Germany')) {
 console.log(neighbours);
 neighbours[neighbours.indexOf('Mozambique')] = 'Republic of Mozambique';
 console.log(neighbours);
+
+
+// 042 Introduction to Objects
+
+const myCountry = {
+    country: 'South Africa',
+    capital: 'Pretoria',
+    langauge: 'English',
+    population: 56,
+    neighbours: ['Namibia', 'Botwana', 'Zimbabwe', 'Mozambique']
+}
+
+console.log(myCountry);
+
 */
