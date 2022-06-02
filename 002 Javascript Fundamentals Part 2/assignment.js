@@ -20,7 +20,7 @@ function percentageOfWorld(population) {
 // Function Expression
 const percentageOfWorld2 = function(population) {
     return (population / 7900) * 100;
-} 
+}
 
 const chinaPercentage1 = percentageOfWorld(1440).toFixed(2);
 const portugalPercentage1 = percentageOfWorld(10).toFixed(4);
@@ -59,7 +59,7 @@ console.log(describePopulation('South Africa', 56));
 console.log(describePopulation('Portugal', 10));
 
 
-// 
+//
 
 // 039 Introduction to Arrays
 const populations = [56, 1440, 10, 350];
@@ -90,7 +90,7 @@ const neighbours = [
 ]
 console.log(neighbours);
 //add element to end
-neighbours.push('Utopia'); 
+neighbours.push('Utopia');
 console.log(neighbours);
 // remove end element
 neighbours.pop();
@@ -139,5 +139,36 @@ console.log(myCountry);
 myCountry['population'] -= 2;
 console.log(myCountry);
 
-*/
+
 // 044 Object Methods
+
+const myCountry = {
+    country: 'South Africa',
+    capital: 'Pretoria',
+    langauge: 'English',
+    population: 59,
+    neighbours: ['Namibia', 'Botswana', 'Zimbabwe', 'Mozambique'],
+    describe: function () {
+        return `${this.country} has ${this.population} million ${this.langauge} speakers. It also has ${this.neighbours.length} neighbouring countries.`
+    },
+    checkIsland: function () {
+        // this.isIsland = this.neighbours.length === 0 ? true : false;
+        this.isIsland = !Boolean(this.neighbours.length)
+        // create property called isIsland
+        // neigbours.length conv. boolean
+        // if neigbours.length = 0
+        // then boolean = false (falsy)
+        // if neigbours.length > 0
+        // then boolean = true
+        // opposite false >> true
+        // therefore isIsland = true
+        return this.isIsland
+    }
+}
+
+console.log(myCountry.describe());
+console.log(myCountry.checkIsland());
+
+*/
+
+// 046 Iteration_the forloop

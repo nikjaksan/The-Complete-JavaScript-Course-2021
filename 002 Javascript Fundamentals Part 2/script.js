@@ -417,9 +417,9 @@ console.log(nickObject[interestedIn]);
 
 
 if (objectName[objectProperty]) {
-log objectProperty if it exists within objectName   
+log objectProperty if it exists within objectName
 } else {
-log "Choose from list" or "Does not exist" 
+log "Choose from list" or "Does not exist"
 }
 
 
@@ -460,7 +460,7 @@ const nickObject = {
     birthYear: 1996,
     // basically function expression with slightly different formatting.
     // propertyName === functionName
-    // 
+    //
     // functionName: function (parameters) {
         // return xyz ...
     // }
@@ -473,10 +473,10 @@ const nickObject = {
     // eg. const calcAge=function(birthYear) { return xyz..}
 }
 
-// Utilise the dot notation to access calcAge method (object method) 
+// Utilise the dot notation to access calcAge method (object method)
 // EASY
 console.log(nickObject.calcAge(1996));
-// Utilise the bracket notation to access calcAge method             
+// Utilise the bracket notation to access calcAge method
 // HARDER --- The brackets surrounds [functionName -- as a string!] with argument seperate
 // objectName['functionName'](argument);
 console.log(nickObject['calcAge'](1996));
@@ -484,37 +484,36 @@ console.log(nickObject['calcAge'](1996));
 // What if we want to utilise a property from the same Object in our function?
 // Introducing 'this' keyword:
 // this === object calling the method
-// 
+//
 // Inside Object:
 // calcAge: function (birthYear) {
 //     return (new Date().getFullYear())  - this.birthYear;
 // }
 // this basically refers to the object the method sits inside of.
 // we could use objectName.property however we'd break the rule of          D.R.Y.(If the object name changes we would have to change all instances referring to it)
-*/
+
 // Use method to calculate and store another property in the object
 
 const nickObject = {
     firstName: 'Nick',
     lastName: 'Santiago',
-    age: 26,
     job: 'unemployed',
     friends: ['Sasha', 'Nico', 'Marek'],
-    birthYear: 1996,
-   
+    birthYear: 2021,
+    age: 26,
+
     calcAge: function () {
         this.age = 2022 - this.birthYear;
         return this.age
     },
 
     getSummary: function () {
-    return `${this.firstName} ${this.lastName} was born in ${this.birthYear} and is ${this.age} years old.`
+        return `${this.firstName} ${this.lastName} was born in ${this.birthYear} and is ${this.age} years old. He has ${this.friends.length} friends, namely ${this.friends[0]}, ${this.friends[1]} and ${this.friends[2]}. He is currently ${this.job}. He has ${this.age >= 18 ? "a" : "no"} driver's license.`
+    }
 }
-}
-/* He is ${this.job} and has ${this.friends.length()} many friends who's names are ${this.friend[0]}, ${this.friend[1]} and ${this.friend[2]}.*/
 
-console.log(nickObject.getSummary);
+console.log(nickObject.getSummary());
 
+*/
 
-
-
+// 046 Iteration_the forloop

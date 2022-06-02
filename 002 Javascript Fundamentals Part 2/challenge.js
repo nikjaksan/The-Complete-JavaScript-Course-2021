@@ -111,5 +111,39 @@ const totals = [
     bills[2] + tips[2]
 ]
 console.log(totals);
-*/
 
+// Coding Challenge 3
+
+// full name, mass, and 
+// height (Mark Miller and John Smith
+
+const markInfo = {
+    firstName: 'Mark',
+    lastName: 'Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmiMark = this.mass / (this.height ** 2)
+        return this.bmiMark;
+    }
+}
+console.log(markInfo.calcBMI().toFixed(2));
+
+const johnInfo = {
+    firstName: 'John',
+    lastName: 'Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmiJohn = this.mass / (this.height ** 2)
+        return this.bmiJohn;
+    }
+}
+console.log(johnInfo.calcBMI().toFixed(2));
+if (markInfo.bmiMark > johnInfo.bmiJohn) {
+    console.log(`${markInfo.firstName} ${markInfo.lastName}'s BMI (${markInfo.bmiMark}) is greater than ${johnInfo.firstName} ${johnInfo.lastName}'s BMI (${johnInfo.bmiJohn})`)
+} else {
+    console.log(`${johnInfo.firstName} ${johnInfo.lastName}'s BMI (${johnInfo.bmiJohn}) is greater than ${markInfo.firstName} ${markInfo.lastName}'s BMI (${markInfo.bmiMark})`)
+};
+
+*/
