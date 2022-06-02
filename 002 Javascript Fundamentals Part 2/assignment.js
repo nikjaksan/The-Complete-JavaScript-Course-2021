@@ -115,9 +115,29 @@ const myCountry = {
     capital: 'Pretoria',
     langauge: 'English',
     population: 56,
-    neighbours: ['Namibia', 'Botwana', 'Zimbabwe', 'Mozambique']
+    neighbours: ['Namibia', 'Botswana', 'Zimbabwe', 'Mozambique']
 }
 
 console.log(myCountry);
 
+
+// 043 Dot vs. Bracket Object Notation
+
+const myCountry = {
+    country: 'South Africa',
+    capital: 'Pretoria',
+    langauge: 'English',
+    population: 59,
+    neighbours: ['Namibia', 'Botswana', 'Zimbabwe', 'Mozambique']
+}
+
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.langauge} speakers. It also has ${myCountry.neighbours.length} neighbouring countries.`)
+
+myCountry.population += 2;
+console.log(myCountry);
+
+myCountry['population'] -= 2;
+console.log(myCountry);
+
 */
+// 044 Object Methods

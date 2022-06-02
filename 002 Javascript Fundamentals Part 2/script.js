@@ -392,6 +392,7 @@ const nickObject = {
     status: 'unemployed',
     friends: ['Sasha', 'Nico', 'Marek']
 }
+
 console.log(nickObject.firstName);
 // Dot notation requires us to use the full property name.
 
@@ -409,14 +410,111 @@ console.log(nickObject["last" + nameKey]);
 
 const interestedIn = prompt(`What do you want to know about Nick? Choose between firstName, lastName, age, status or friends.`)
 console.log(nickObject.interestedIn);
-// undefined since nickObject does not have a propery called 'interestedIn'
+// undefined since nickObject does not have a property called 'interestedIn'
 console.log(nickObject[interestedIn]);
-//using bracket notation allows for interestedIn to be calculated (input from the prompt)
+//using bracket notation allows for interestedIn to be evaluated(input from the prompt) and then looked up in the object list
+// using objects properties for boolean statements
 
 
+if (objectName[objectProperty]) {
+log objectProperty if it exists within objectName   
+} else {
+log "Choose from list" or "Does not exist" 
+}
 
 
+// if (nickObject[interestedIn]) {
+//     console.log(nickObject[interestedIn]) // square brackets
+// } else {
+//     console.log("Choose one of the following: firstName, lastName, age, status or friends.")
+// }
+
+// adding new properties to an object - dot method
+// objectName.newProperty = 'Property Value';
+nickObject.location = 'Johannesburg'; //adding location: 'johannesburg' to the object
+console.log(nickObject);
+
+// adding new properties to an object - bracket method
+// objectName['newProperty'] = 'Property Value'; -newProperty in quotes
+nickObject['ethnicity'] = 'Caucasian';
+console.log(nickObject);
 
 
+console.log(`${nickObject.firstName} has ${nickObject.friends.length} friends and his best friend is ${nickObject.friends[0]}.`)
 
+
+// 044 Object Methods
+// inserting functions into objects is an object method since functions are essentially a value
+//
+
+const calcAge = function(birthYear) {
+    return (new Date().getFullYear())  - birthYear;
+}
+
+const nickObject = {
+    firstName: 'Nick',
+    lastName: 'Santiago',
+    age: 26,
+    status: 'unemployed',
+    friends: ['Sasha', 'Nico', 'Marek'],
+    birthYear: 1996,
+    // basically function expression with slightly different formatting.
+    // propertyName === functionName
+    // 
+    // functionName: function (parameters) {
+        // return xyz ...
+    // }
+    calcAge: function (birthYear) {
+        return (new Date().getFullYear())  - birthYear;
+    }
+
+
+    // You cannot utilise a function declaration within an object
+    // eg. const calcAge=function(birthYear) { return xyz..}
+}
+
+// Utilise the dot notation to access calcAge method (object method) 
+// EASY
+console.log(nickObject.calcAge(1996));
+// Utilise the bracket notation to access calcAge method             
+// HARDER --- The brackets surrounds [functionName -- as a string!] with argument seperate
+// objectName['functionName'](argument);
+console.log(nickObject['calcAge'](1996));
+
+// What if we want to utilise a property from the same Object in our function?
+// Introducing 'this' keyword:
+// this === object calling the method
+// 
+// Inside Object:
+// calcAge: function (birthYear) {
+//     return (new Date().getFullYear())  - this.birthYear;
+// }
+// this basically refers to the object the method sits inside of.
+// we could use objectName.property however we'd break the rule of          D.R.Y.(If the object name changes we would have to change all instances referring to it)
 */
+// Use method to calculate and store another property in the object
+
+const nickObject = {
+    firstName: 'Nick',
+    lastName: 'Santiago',
+    age: 26,
+    job: 'unemployed',
+    friends: ['Sasha', 'Nico', 'Marek'],
+    birthYear: 1996,
+   
+    calcAge: function () {
+        this.age = 2022 - this.birthYear;
+        return this.age
+    },
+
+    getSummary: function () {
+    return `${this.firstName} ${this.lastName} was born in ${this.birthYear} and is ${this.age} years old.`
+}
+}
+/* He is ${this.job} and has ${this.friends.length()} many friends who's names are ${this.friend[0]}, ${this.friend[1]} and ${this.friend[2]}.*/
+
+console.log(nickObject.getSummary);
+
+
+
+
