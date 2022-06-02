@@ -111,5 +111,5 @@ const totals = [
     bills[2] + tips[2]
 ]
 console.log(totals);
-
 */
+

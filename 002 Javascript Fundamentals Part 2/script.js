@@ -382,7 +382,6 @@ console.log(nickObject.name)
 //calling the object to produce value of property 'name'
 // In Objects, the order does not matter. The object properties (keys) are used intead of the index system.
 
-*/
 // 043 Dot vs. Bracket Notation
 // Calling an object property (Dot method)
 // objectName.propertyName
@@ -420,3 +419,4 @@ console.log(nickObject[interestedIn]);
 
 
 
+*/
