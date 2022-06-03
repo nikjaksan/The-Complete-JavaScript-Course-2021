@@ -188,4 +188,12 @@ for (let i = 0; i < populations.length; i++) {
     percentages2[i] = populations[i] / 7900;
     console.log(percentages2[i].toFixed(3)+ "%");
 }
+
+for (let i = 0; i < populations.length; i++) {
+    if (populations[i] > 100) {
+        continue;
+    }
+    console.log(populations[i]);
+}
 */
+
