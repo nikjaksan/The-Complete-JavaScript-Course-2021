@@ -572,4 +572,75 @@ for (let i = 0; i < nickArray.length; i++) {
     console.log(nickArray[i], typeof nickArray[i])
 }
 
+// Arrays with elements that have multiple pieces of information
+const people = [['Jason', 1991], ['Megan', 2008], ['Raul', 2005], ['Ralph', 1965], ['Jessica' , 1940], ['Kelly', 2020]];
+// Log only the names, which are indexed at 0.
+for (let i = 0; i < people.length; i ++) {
+    console.log(people[i][0]);
+    // array[i][index position of element]
+}
+
+
+// are they old enough to drink? then print
+
+const dateNow = new Date().getFullYear()
+for (let i = 0; i < people.length; i ++) {
+    const currentAge = dateNow - people[i][1]; 
+    if (currentAge < 21) {
+        continue;
+    }
+    console.log(`${people[i][0]} is ${currentAge} and can drink.`);
+}
+
+// are they too young to drink? 
+for (let i = 0; i < people.length; i++) {
+    const currentAge = dateNow - people[i][1];
+    if (currentAge < 21) {
+        console.log(`${people[i][0]} is currently ${currentAge} years old and is too young to drink.`)
+    }
+}
+
+
+const lottery = [
+    ['John', 1],
+    ['Jamie', 2],
+    ['Betty', 3],
+    ['Jennifer', 4],
+    ['Jessica', 5],
+    ['Larry', 6]
+]
+
+function getRandomInteger (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min) 
+}
+
+const winningNumber = getRandomInteger(1,6);
+
+for (let i = 0; i < lottery.length; i ++) {
+    if (winningNumber === lottery[i][1]) {
+        console.log(`${lottery[i][0]} won the lottery with number ${winningNumber}`)
+        // break;
+    } else {
+        console.log(`${lottery[i][0]} lost the lottery. The winning number was ${winningNumber}`)
+    }
+}
+
+// 048 Looping Backwards and Loops within Loops
+
+// Looping Backwards
+for (let i = 10; i > -1; i --) {
+    console.log(i);
+}
 */
+const raceWinners = [
+    ['Jamie', '1st'],
+    ['Jessica', '2nd'],
+    ['Mark', '3rd'],
+    ['Steven', '4th'],
+    ['Clyde', '5th']
+]
+
+for (let i = raceWinners.length - 1; i >= 0; i --) {
+    // console.log(`${raceWinners[i][0]} is in position ${raceWinners[i][1]}.`);
+    console.log(`${raceWinners[i]}`)
+} 
