@@ -127,6 +127,7 @@ const markInfo = {
         return this.bmiMark;
     }
 }
+
 console.log(markInfo.calcBMI().toFixed(2));
 
 const johnInfo = {
@@ -141,9 +142,8 @@ const johnInfo = {
 }
 console.log(johnInfo.calcBMI().toFixed(2));
 if (markInfo.bmiMark > johnInfo.bmiJohn) {
-    console.log(`${markInfo.firstName} ${markInfo.lastName}'s BMI (${markInfo.bmiMark}) is greater than ${johnInfo.firstName} ${johnInfo.lastName}'s BMI (${johnInfo.bmiJohn})`)
+    console.log(`${markInfo.firstName} ${markInfo.lastName}'s BMI (${markInfo.bmiMark.toFixed(2)}) is greater than ${johnInfo.firstName} ${johnInfo.lastName}'s BMI (${johnInfo.bmiJohn.toFixed(2)})`)
 } else {
-    console.log(`${johnInfo.firstName} ${johnInfo.lastName}'s BMI (${johnInfo.bmiJohn}) is greater than ${markInfo.firstName} ${markInfo.lastName}'s BMI (${markInfo.bmiMark})`)
+    console.log(`${johnInfo.firstName} ${johnInfo.lastName}'s BMI (${johnInfo.bmiJohn.toFixed(2)}) is greater than ${markInfo.firstName} ${markInfo.lastName}'s BMI (${markInfo.bmiMark.toFixed(2)})`)
 };
-
 */

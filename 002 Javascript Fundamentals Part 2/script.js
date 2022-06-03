@@ -514,6 +514,61 @@ const nickObject = {
 
 console.log(nickObject.getSummary());
 
-*/
+
 
 // 046 Iteration_the forloop
+// for(let varName = startingValue;varName conditional; 
+// Loopincrement) {
+// executable code
+// }
+
+for (let rep = 1; rep <=10; rep ++) {
+    console.log(`This is repetition number ${rep}.`)
+}
+*/
+
+// 047 Looping Arrays (Breaking and Continuing)
+const birthYear = 1996;
+const nickArray = [
+    'Nick',
+    'Santiago',
+    false,
+    2022 - 1996,
+    'Unemployed',
+    ['Sasha', 'Nico', 'Marek']
+]
+/*
+console.log(typeof nickArray[2]);
+const typeofArray = [];
+
+for (let i = 0; i <= nickArray.length; i ++) {
+    // console.log(nickArray[i])
+    // populate typesArray with nickArray
+    // store empty array in variable outside forloop
+    typeofArray[i] = typeof nickArray[i];
+}
+
+const birthYears = [1991, 2007, 1969, 2020]
+const ages = [];
+
+for (let i = 0; i < birthYears.length; i ++) {
+    // ages[i] = 2022 - birthYears[i];
+    // console.log(ages[i]);
+    // OR use the PUSH method
+    ages.push(2022 - birthYears[i]) 
+}
+console.log(ages);
+
+// Continue 
+console.log("---ONLY STRINGS---")
+for (let i = 0; i < nickArray.length; i++) {
+    if (typeof nickArray[i] !== 'string') continue;
+    console.log(nickArray[i], typeof nickArray[i]);
+}
+*/
+console.log("---BREAK WITH NUMBER---")
+for (let i = 0; i < nickArray.length; i++) {
+    if (typeof nickArray[i] === 'number') break;
+    console.log(nickArray[i], typeof nickArray[i])
+}
+
