@@ -610,13 +610,15 @@ const lottery = [
     ['Larry', 6]
 ]
 
-function getRandomInteger (min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min) 
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-const winningNumber = getRandomInteger(1,6);
+console.log(Math.random());
 
-for (let i = 0; i < lottery.length; i ++) {
+const winningNumber = getRandomInteger(1, 6);
+
+for (let i = 0; i < lottery.length; i++) {
     if (winningNumber === lottery[i][1]) {
         console.log(`${lottery[i][0]} won the lottery with number ${winningNumber}`)
         // break;
@@ -628,10 +630,27 @@ for (let i = 0; i < lottery.length; i ++) {
 // 048 Looping Backwards and Loops within Loops
 
 // Looping Backwards
+const yearNow = new Date().getFullYear();
+const birthYear = 1996;
+
+const nickArray = [
+    'Nick',
+    'Santiago',
+    yearNow - birthYear,
+    'Unemployed',
+    ['Sasha', 'Nico', 'Marek'],
+    false
+]
+
+for (let i = nickArray.length - 1; i > - 1; i--) {
+    console.log(i, nickArray[i]);
+}
+
+
 for (let i = 10; i > -1; i --) {
     console.log(i);
 }
-*/
+
 const raceWinners = [
     ['Jamie', '1st'],
     ['Jessica', '2nd'],
@@ -640,7 +659,161 @@ const raceWinners = [
     ['Clyde', '5th']
 ]
 
-for (let i = raceWinners.length - 1; i >= 0; i --) {
+for (let i = raceWinners.length - 1; i >= 0; i--) {
     // console.log(`${raceWinners[i][0]} is in position ${raceWinners[i][1]}.`);
     console.log(`${raceWinners[i]}`)
+}
+
+for (let i = 2; i > -1; i--) {
+    console.log(`${raceWinners[i][0]} placed ${raceWinners[i][1]} in the race.`)
 } 
+
+//////////////////////////////////////
+
+// How to generate a random number within a range
+
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+console.log(getRandomInteger(1, 6));
+
+// Generate a random number between 2.5 and 10.75, including both 2.5 and 10.75, and specifying 2 decimal places
+function generateRandomDecimalInRangeFormatted(min, max, places) {
+    let value = (Math.random() * (max - min + 1)) + min;
+    return Number.parseFloat(value).toFixed(places);
+}
+
+let value7 = generateRandomDecimalInRangeFormatted(2.5, 10.75, 2);
+
+console.log(value7);
+
+//////////////////////////
+
+// Nested Loops
+// 3 exercises 5 repetitions each
+
+const exercises = [
+    'Curls',
+    'Push-ups',
+    'Sit-ups'
+]
+
+for (let i = 0; i <= exercises.length; i++) {
+    if (i > 0) {
+        console.log('-----------')
+    }
+    for (let j = 1; j <= 5; j++) {
+        console.log(`${exercises[i]} repetition ${[j]}`)
+    }
+}
+
+
+/*
+
+for (let i = 0; i < 5; i++) {
+    console.log(`The current value of i is ${i}`)
+    for (let j = 0; j < 5; j++) {
+        console.log(`j: ${j}`)
+    }
+    console.log("---------------")
+}
+
+
+// Math timestables using nested loops
+
+for (let i = 0; i <= 10; i++) {
+    for (let j = 0; j <= 10; j++) {
+        console.log(`${i} x ${j} = ${i * j}`);
+    }
+    console.log("--------------");
+}
+
+// Store Inventory Example
+
+const storeInventory = [
+    ["Item: Computer", "Price: $1500", "Inventory: 25"],
+    ["Item: Speakers", "Price: $50", "Inventory: 100"],
+    ["Item: Monitors", "Price: $200", "Inventory: 27"],
+    ["Item: Headphones", "Price: $400", "Inventory: 7"],
+    ["Item: Printers", "Price: $100", "Inventory: 90"],
+    ["Item: USB Cable", "Price: $9", "Inventory: 500"],
+    ["Item: Router", "Price: $350", "Inventory: 23"],
+    ["Item: Wireless Keyboard", "Price: $20", "Inventory: 55"],
+    ["Item: Fans", "Price: $35", "Inventory: 6"]
+]
+// console.log(storeInventory);
+
+for (let i = 0; i < storeInventory.length; i++) {
+    if (i > 0) {
+        console.log("-----------------")
+    }
+    for (let j = 0; j < storeInventory[i].length; j++) {
+        console.log(storeInventory[i][j]);
+    }
+}
+// 049 The While Loop
+// while (condition of variable) {
+//      executable code
+//      ++ for iteration
+// }
+
+let number = 0;
+while (number < 5) {
+    console.log(number);
+    number++;
+}
+
+const films = [
+    'Matrix',
+    'Jaws',
+    'Titanic',
+    'Alien',
+    'Aladdin',
+    'Batman',
+    'Inception',
+    'Rocky',
+    'Scarface'
+]
+let i = 0;
+while (i < films.length) {
+    console.log(films[i]);
+    i++; //increment
+}
+
+*/
+// using a while() loop inside a function
+
+function calcAverage(scores) {
+    let i = 0; let sumScores = 0;
+    while (i < scores.length) {
+        sumScores += scores[i];
+        i++;
+    }
+    return sumScores / scores.length;
+}
+
+const myAverage = calcAverage([99, 75, 83, 93, 100]);
+const myAverage2 = calcAverage([55, 33, 54, 95, 84]);
+
+
+console.log(myAverage, myAverage2);
+
+const tvShows = [
+    'Bridgerton',
+    'Fate',
+    'Alone',
+    'Lupin',
+    'Spycraft',
+    '3%',
+    'The Society',
+    'The Rain',
+    'You'
+]
+
+let myList = '', i = 0;
+while (i < tvShows.length - 1) {
+    myList += tvShows[i] + ", ";
+    i++
+} //this while loop will list shows and seperate them by a comma
+myList += `and ${tvShows[tvShows.length - 1]}.` //for the last entry
+console.log(myList);
