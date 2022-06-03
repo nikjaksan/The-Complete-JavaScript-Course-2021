@@ -176,4 +176,16 @@ console.log(myCountry.checkIsland());
 for (let isVoting = 1; isVoting <= 50; isVoting ++) {
     console.log(`Voter number ${isVoting} is currently voting.`)
 }
+
+
+// 047 Looping Arrays (Contuining and Breaking)\
+
+const populations = [56, 1440, 10, 350];
+
+const percentages2 = [];
+
+for (let i = 0; i < populations.length; i++) {
+    percentages2[i] = populations[i] / 7900;
+    console.log(percentages2[i].toFixed(3)+ "%");
+}
 */

@@ -525,7 +525,7 @@ console.log(nickObject.getSummary());
 for (let rep = 1; rep <=10; rep ++) {
     console.log(`This is repetition number ${rep}.`)
 }
-*/
+
 
 // 047 Looping Arrays (Breaking and Continuing)
 const birthYear = 1996;
@@ -537,7 +537,7 @@ const nickArray = [
     'Unemployed',
     ['Sasha', 'Nico', 'Marek']
 ]
-/*
+
 console.log(typeof nickArray[2]);
 const typeofArray = [];
 
@@ -565,10 +565,11 @@ for (let i = 0; i < nickArray.length; i++) {
     if (typeof nickArray[i] !== 'string') continue;
     console.log(nickArray[i], typeof nickArray[i]);
 }
-*/
+
 console.log("---BREAK WITH NUMBER---")
 for (let i = 0; i < nickArray.length; i++) {
     if (typeof nickArray[i] === 'number') break;
     console.log(nickArray[i], typeof nickArray[i])
 }
 
+*/
