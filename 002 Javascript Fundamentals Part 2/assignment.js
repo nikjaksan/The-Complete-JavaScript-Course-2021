@@ -209,4 +209,65 @@ for (let i = 0; i < listOfNeighbours.length; i++) {
     }
 }
 
+
+
+// 049 The While Loop
+const populations = [
+    ['China', 1440],
+    ['South Africa', 56],
+    ['Portugal', 10],
+    ['Finland', 9]
+]
+///////////////
+let i = 0;
+while (i < populations.length) {
+    console.log(`The population of ${populations[i][0]} is ${populations[i][1]} million people, with a global share of ${((populations[i][1] / 7900) * 100).toFixed(2)}%.`);
+    i++;
+}
+//////////
+
+const films = [
+    'Matrix',
+    'Jaws',
+    'Titanic',
+    'Alien',
+    'Aladdin',
+    'Batman',
+    'Inception',
+    'Rocky',
+    'Scarface'
+]
+
+let i = 0;
+console.log('My favourite movies are: ')
+while (i < films.length - 1) {
+    console.log(`${films[i]}, `);
+    i++;
+}
+console.log(`and ${films[films[i].length]}`)
+
+//////////////
+
+const tvShows = [
+    'Bridgerton',
+    'Fate',
+    'Alone',
+    'Lupin',
+    'Spycraft',
+    '3%',
+    'The Society',
+    'The Rain',
+    'You'
+]
+
+let i = 0, myList = '';
+
+while (i < tvShows.length - 1) {
+    myList += tvShows[i] + ', ';
+    i++
+}
+myList += 'and ' + tvShows[tvShows[i].length];
+
+console.log(myList);
 */
+

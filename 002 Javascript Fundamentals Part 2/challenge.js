@@ -146,4 +146,55 @@ if (markInfo.bmiMark > johnInfo.bmiJohn) {
 } else {
     console.log(`${johnInfo.firstName} ${johnInfo.lastName}'s BMI (${johnInfo.bmiJohn.toFixed(2)}) is greater than ${markInfo.firstName} ${markInfo.lastName}'s BMI (${markInfo.bmiMark.toFixed(2)})`)
 };
+
+
+// Coding Challenge 4
+const bills = [
+    22,
+    295,
+    176,
+    440,
+    37,
+    105,
+    10,
+    1100,
+    86,
+    52
+]
+
+const tips = [];
+const totals = [];
+
+const calcTip = bill => bill > 50 && bill < 300 ? (bill * 0.15) : (bill * 0.2);
+const calcTotal = (bills, tips) => (bills + tips);
+
+for (let i = 0; i < bills.length; i++) {
+    tips.push(calcTip(bills[i]));
+}
+console.log(tips)
+
+for (let i = 0; i < bills.length; i++) {
+    totals.push(calcTotal(bills[i], tips[i]));
+}
+console.log(totals);
+
+let i = 0;
+while (i < bills.length) {
+    console.log(`${bills[i]} was the bill amount, ${tips[i]} was the tip and the total was ${totals[i]}.`);
+    i++;
+}
+
 */
+///////BONUS///////////
+const arry = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+function calcAverage(numArray) {
+    let i = 0, sumAmount = 0;
+    while (i < arry.length) {
+        sumAmount += arry[i];
+        i++;
+    }
+    return sumAmount / arry.length;
+}
+console.log(calcAverage());
+

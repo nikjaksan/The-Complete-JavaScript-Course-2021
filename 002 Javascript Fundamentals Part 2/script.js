@@ -763,6 +763,8 @@ while (number < 5) {
     number++;
 }
 
+
+
 const films = [
     'Matrix',
     'Jaws',
@@ -780,7 +782,7 @@ while (i < films.length) {
     i++; //increment
 }
 
-*/
+
 // using a while() loop inside a function
 
 function calcAverage(scores) {
@@ -817,3 +819,5 @@ while (i < tvShows.length - 1) {
 } //this while loop will list shows and seperate them by a comma
 myList += `and ${tvShows[tvShows.length - 1]}.` //for the last entry
 console.log(myList);
+*/
+
