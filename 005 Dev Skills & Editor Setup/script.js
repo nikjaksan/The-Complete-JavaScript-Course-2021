@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 // 059 Using Google, Stackoverflow, MDN
 // A smart home company wants to calculate the range of recorded temperatures given an array.
 // 1) Understand the problem:
@@ -13,7 +13,9 @@
 //      -How do we find the min value in the array?
 //      -How do we calculate the range between the min and max? Subtract min from max (range)
 // Using one array
+
 const tempArray = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+
 
 const calcTempRange = function (temps) {
   let max = tempArray[0],
@@ -44,3 +46,38 @@ console.log(tempRange);
 //  2) Break the problem down
 //      - We need to merge the two arrays, how can this be achieved?
 //          If we concatenate the second array onto the first and store this in a variable
+const tempArray2 = [48, 11, 2, 33, 4, 5];
+
+const calcTempRangeTwo = function (t1, t2) {
+  const arrayMerge = t1.concat(t2);
+  let max = tempArray[0],
+    min = tempArray[0];
+
+  // find the max/min of the tempArray
+  for (let i = 0; i < arrayMerge.length; i++) {
+    let currTemp = arrayMerge[i];
+    if (typeof currTemp !== 'number') continue;
+
+    if (currTemp > max) max = currTemp;
+    if (min > currTemp) min = currTemp;
+  }
+  console.log(min, max);
+  //   calculate the range of tempArray;
+  return max - min;
+};
+const tempRangeNew = calcTempRangeTwo(tempArray, tempArray2);
+console.log(tempRangeNew);
+*/
+// 060 Debugging (Fixing Errors)
+// 061 Debugging with the console and breaking points
+const measureKelvin = function () {
+  const measurement = {
+    type: 'temperature',
+    unit: 'celsius',
+    value: Number(prompt('Degrees celsius:')),
+  };
+  console.table(measurement);
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+console.log(measureKelvin());
