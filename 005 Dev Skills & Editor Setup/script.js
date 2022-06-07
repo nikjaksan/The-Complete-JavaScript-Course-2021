@@ -1,41 +1,46 @@
 'use strict';
 
 // 059 Using Google, Stackoverflow, MDN
+// A smart home company wants to calculate the range of recorded temperatures given an array.
+// 1) Understand the problem:
+//      -What is meant by temperature range? The difference between the max and min values
+//      -How can we compute the max/min values?
+//      -What is a sensor error and what should happen with that data-type?
 
-// const temperatures1 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
-// const temperatures2 = [8, 42, 13, -16, 7, 5, -1, 18, 33, -16, 'error', 17];
-// // determine max value of array
-// /*
-// const calcTempAmplitude = function (temps) {
-//     let max = temps[0], min = temps[0];
+// 2) Breaking the larger problem into smaller, more manageble sub-problems:
+//      -How do we ignore the errors?
+//      -How do we find the max value in the array?
+//      -How do we find the min value in the array?
+//      -How do we calculate the range between the min and max? Subtract min from max (range)
+// Using one array
+const tempArray = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
-//     for (let i = 0; i < temperatures.length; i++) {
-//         const currTemp = temps[i];
+const calcTempRange = function (temps) {
+  let max = tempArray[0],
+    min = tempArray[0];
 
-//         if (currTemp < min) min = currTemp;
-//         if (currTemp > max) max = currTemp;
-//     }
-//     return max - min;
-// }
+  // find the max/min of the tempArray
+  for (let i = 0; i < tempArray.length; i++) {
+    let currTemp = temps[i];
+    if (typeof currTemp !== 'number') continue;
 
-// console.log('The temperature range is ' + calcTempAmplitude(temperatures));
-// */
+    if (currTemp > max) max = currTemp;
+    if (min > currTemp) min = currTemp;
+  }
+  console.log(min, max);
+  //   calculate the range of tempArray;
+  return max - min;
+};
 
-// const calcTempAmplitudeNew = function (temp1, temp2) {
-//   const tempMerge = temp1.concat(temp2);
-//   // concatenate temp2 on temp1 and store it as a new array called tempMerge
-//   let max = tempMerge[0],
-//     min = tempMerge[0];
+const tempRange = calcTempRange(tempArray);
+console.log(tempRange);
 
-//   for (let i = 0; i < tempMerge.length; i++) {
-//     const currTemp = tempMerge[i];
-
-//     if (currTemp < min) min = currTemp;
-//     if (currTemp > max) max = currTemp;
-//   }
-//   return max - min;
-// };
-// console.log(
-//   'The temperature range is ' +
-//     calcTempAmplitudeNew(temperatures1, temperatures2)
-// );
+// The company wants to use two arrays.
+//  1) Understanding the problem
+//      - With two arrays, should the function be used twice?
+//          No - it won't be necessary
+//      - What should happen to the arrays, since we only need to pass them through a         single function?
+//          We need to merge the two arrays into a single array then pass through as normal
+//  2) Break the problem down
+//      - We need to merge the two arrays, how can this be achieved?
+//          If we concatenate the second array onto the first and store this in a variable
