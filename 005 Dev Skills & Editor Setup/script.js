@@ -67,17 +67,30 @@ const calcTempRangeTwo = function (t1, t2) {
 };
 const tempRangeNew = calcTempRangeTwo(tempArray, tempArray2);
 console.log(tempRangeNew);
-*/
+
 // 060 Debugging (Fixing Errors)
 // 061 Debugging with the console and breaking points
-const measureKelvin = function () {
-  const measurement = {
-    type: 'temperature',
-    unit: 'celsius',
-    value: Number(prompt('Degrees celsius:')),
-  };
-  console.table(measurement);
-  const kelvin = measurement.value + 273;
-  return kelvin;
+const tempArray = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+const tempArray2 = [48, 11, 2, 33, 4, 5];
+
+const calcTempRangeBug = function (t1, t2) {
+  const arrayMerge = t1.concat(t2);
+  let max = arrayMerge[0], //introducing bug
+    min = arrayMerge[0];
+
+  // find the max/min of the tempArray
+  for (let i = 0; i < arrayMerge.length; i++) {
+    let currTemp = arrayMerge[i];
+    if (typeof currTemp !== 'number') continue;
+
+    if (currTemp > max) max = currTemp;
+    if (min > currTemp) min = currTemp;
+  }
+  console.log(min, max);
+  //   calculate the range of tempArray;
+  return max - min;
 };
-console.log(measureKelvin());
+// A) Identify (Max is correct, but Min is 0 which is wrong since it should be 1)
+const tempRangeBug = calcTempRangeBug([3, 5, 1], [9, 4, 5]); //9 - 1 = 8, but we got 9
+console.log(tempRangeBug);
+*/
