@@ -16,7 +16,6 @@
 
 const tempArray = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
-<<<<<<< HEAD
 console.log('The temperature range is ' + calcTempAmplitude(temperatures));
 
 
@@ -34,8 +33,7 @@ const calcTempAmplitudeNew = function (temp1, temp2) {
     return max - min;
 }
 console.log('The temperature range is ' + calcTempAmplitudeNew(temperatures1, temperatures2));
-*/
-=======
+
 
 const calcTempRange = function (temps) {
   let max = tempArray[0],
@@ -114,4 +112,3 @@ const calcTempRangeBug = function (t1, t2) {
 const tempRangeBug = calcTempRangeBug([3, 5, 1], [9, 4, 5]); //9 - 1 = 8, but we got 9
 console.log(tempRangeBug);
 */
->>>>>>> 808cd0d95dc2d0708b89fc9ffdecbe3c8dbba72e
