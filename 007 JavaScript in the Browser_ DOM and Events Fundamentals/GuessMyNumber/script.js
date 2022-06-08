@@ -20,13 +20,41 @@ document.querySelector('.score').textContent = 10; //change '20'(HTML) >> '10' (
 // document.querySelector('.check').addEventListener('click', function () {
 // console.log(document.querySelector('.guess').value);
 
+// RNG should be outside of button handler since it should only be calculated once and not every time a number is guessed.
+
+const secretNumber = Math.trunc(Math.random() * 20) + 1;
+document.querySelector('.number').textContent = secretNumber;
+
+let score = 20;
+
+
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
   if (!guess) {
-    console.log(
-      (document.querySelector('.message').textContent = '⛔ Not a number!')
-    );
+    document.querySelector('.message').textContent = '⛔ Not a number!'
+  } else if (guess === secretNumber) {
+    document.querySelector('.message').textContent = '🎉 Correct Number'
+  } else if (guess > secretNumber) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = '📉 Choose a smaller number!';
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = 'You lost the game! 🚯';
+      document.querySelector('.score').textContent = '0';
+    }
+  } else if (guess < secretNumber) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = '📈 Choose a larger number! '
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = 'You lost the game! 🚯';
+      document.querySelector('.score').textContent = '0';
+    }
+  } else {
+    document.querySelector('.message').textContent = 'You MUST choose a number between 1 and 20!';
   }
 });
