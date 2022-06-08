@@ -17,7 +17,7 @@ const calcTempAmplitude = function (temps) {
 }
 
 console.log('The temperature range is ' + calcTempAmplitude(temperatures));
-*/
+
 
 const calcTempAmplitudeNew = function (temp1, temp2) {
     const tempMerge = temp1.concat(temp2);
@@ -33,3 +33,4 @@ const calcTempAmplitudeNew = function (temp1, temp2) {
     return max - min;
 }
 console.log('The temperature range is ' + calcTempAmplitudeNew(temperatures1, temperatures2));
+*/
