@@ -27,6 +27,7 @@ document.querySelector('.number').textContent = secretNumber;
 
 let score = 20;
 
+// early iteration
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
@@ -58,7 +59,7 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = 'You MUST choose a number between 1 and 20!';
   }
 });
-*/
+
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 console.log(secretNumber);
@@ -66,60 +67,67 @@ console.log(secretNumber);
 let score = 20;
 let highScore = '';
 
+const displayMessage = function (dispMessage) {
+  document.querySelector('.message').textContent = dispMessage;
+};
+
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
-  console.log(typeof guess, guess);
-
   // when there is no input
   if (!guess) {
-    document.querySelector('.message').textContent = '⛔ Not a valid number!';
-
+    displayMessage('⛔ Not a valid number!');
     // when there is a correct guess
-  } else if (guess === secretNumber) {
-    document.querySelector(
-      '.message'
-    ).textContent = `${secretNumber} is the correct answer! 🎉`;
+  }
+
+  // else if (guess < 1 || guess > 20) {
+  //   displayMessage('⛔ Choose a number between 1 & 20 inclusive');}
+  else if (guess === secretNumber) {
+    displayMessage(`${secretNumber} is the correct answer! 🎉`);
     document.querySelector('body').style.backgroundColor = 'rgb(96, 179, 71)';
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.number').textContent = secretNumber;
-    // console.log(document.querySelector('.score').textContent);
+
     if (score > highScore) {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
     }
-    // when guess is too large
-  } else if (guess > secretNumber && guess < 21) {
-    if (score > 1) {
-      document.querySelector('.message').textContent =
-        '📉 Choose a smaller number';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = '🚯 You lose';
-      document.querySelector('.score').textContent = '0';
-    }
 
-    // when guess is too small
-  } else if (guess < secretNumber && guess > 0) {
-    if (score > 1) {
-      document.querySelector('.message').textContent =
-        '📈 Choose a larger number';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = '🚯 You lose';
-      document.querySelector('.score').textContent = '0';
-    }
-
+    // when guess is too large or too small
+  } else if (
+    guess > secretNumber
+      ? displayMessage('📉 Choose a smaller number')
+      : displayMessage('📈 Choose a larger number')
+  ) {
+    // game functionality inefficient
+    // else if (guess > secretNumber && guess < 21) {
+    //   if (score > 1) {
+    //     document.querySelector('.message').textContent =
+    //       '📉 Choose a smaller number';
+    //     score--;
+    //     document.querySelector('.score').textContent = score;
+    //   } else {
+    //     document.querySelector('.message').textContent = '🚯 You lose';
+    //     document.querySelector('.score').textContent = '0';
+    //   }
+    //   // when guess is too small
+    // } else if (guess < secretNumber && guess > 0) {
+    //   if (score > 1) {
+    //     document.querySelector('.message').textContent =
+    //       '📈 Choose a larger number';
+    //     score--;
+    //     document.querySelector('.score').textContent = score;
+    //   } else {
+    //     document.querySelector('.message').textContent = '🚯 You lose';
+    //     document.querySelector('.score').textContent = '0';
+    //   }
     // when guess is not within correct range
   } else {
     if (score > 1) {
-      document.querySelector('.message').textContent =
-        'Choose a number between 1 & 20';
+      displayMessage('Choose a number between 1 & 20');
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.message').textContent = '🚯 You lose';
+      displayMessage('🚯 You lose');
       document.querySelector('.score').textContent = '0';
     }
   }
@@ -129,10 +137,11 @@ document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Number(Math.trunc(Math.random() * 20) + 1);
   score = 20;
   document.querySelector('.score').textContent = score;
-  document.querySelector('.message').textContent = 'Start guessing...❓';
+  displayMessage('Start guessing...❓');
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
   console.log(secretNumber);
 });
+*/
