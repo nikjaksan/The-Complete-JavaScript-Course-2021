@@ -1,6 +1,6 @@
 'use strict';
-// start by selecting everything you need for project
-// store all the selections into variables
+// start by selecting all the classes you will need for project
+// store all the selections into variables (DRY)
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
@@ -16,7 +16,7 @@ const btnsOpenModal = document.querySelectorAll('.show-modal');
 console.log(btnsOpenModal);
 
 // output the text of each element of the class '.show-modal'
-for (let i = 0; i < btnsOpenModal.length; i ++) {
+for (let i = 0; i < btnsOpenModal.length; i++) {
     console.log(btnsOpenModal[i].textContent);
 }
 
@@ -56,7 +56,7 @@ const openModal = function () {
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
 }
-for (let i = 0; i < btnsOpenModal.length; i ++) {
+for (let i = 0; i < btnsOpenModal.length; i++) {
     btnsOpenModal[i].addEventListener('click', openModal);
 }
 
