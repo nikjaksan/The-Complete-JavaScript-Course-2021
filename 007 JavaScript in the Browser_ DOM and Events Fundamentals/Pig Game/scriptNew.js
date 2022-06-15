@@ -1,5 +1,3 @@
-'use strict';
-
 // Selecting elements (using ID) with #
 const score0El = document.querySelector('#score--0');
 const score1El = document.querySelector('#score--1');
@@ -29,26 +27,21 @@ let activePlayer = 0;
 
 const scores = [0, 0];
 
-// Rolling dice functionality
+////////////
 btnRoll.addEventListener('click', function () {
-  // 1. Generating a random diceroll
   const dice = Math.trunc(Math.random() * 6) + 1;
   console.log(dice);
-  // 2. Display dice value
-  diceEl.classList.remove('hidden');
   diceEl.src = `dice-${dice}.png`;
+  diceEl.classList.remove('hidden');
 
-  // 3. Check if a '1' is rolled
   if (dice !== 1) {
-    // if dice is not a 1, add the value to the player score
     currentScore += dice;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
   } else {
-    // if the dice is a 1, switch player turns
     document.getElementById(`current--${activePlayer}`).textContent = 0;
     currentScore = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0; //this operation traps the value between 0/1
+    activePlayer = activePlayer === 0 ? 1 : 0;
     player0El.classList.toggle('player--active');
     player1El.classList.toggle('player--active');
   }
