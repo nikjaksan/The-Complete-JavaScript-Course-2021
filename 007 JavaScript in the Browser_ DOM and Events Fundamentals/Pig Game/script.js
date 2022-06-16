@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 // Selecting elements (using ID) with #
 const score0El = document.querySelector('#score--0');
 const score1El = document.querySelector('#score--1');
@@ -53,3 +53,13 @@ btnRoll.addEventListener('click', function () {
     player1El.classList.toggle('player--active');
   }
 });
+
+let playing;
+console.log(typeof playing, playing);
+
+if (playing) {
+  console.log(`active`);
+} else {
+  console.log(`inactive`);
+}
+*/
